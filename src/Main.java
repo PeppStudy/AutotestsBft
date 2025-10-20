@@ -1,24 +1,24 @@
-import data.Fizik;
+import data.Car;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i <= 4; i++) {
+        Car volga = new Car();
+        volga.setModel("Волга");
+        volga.setYear(1976);
+        System.out.println(volga.getModel() + " " + volga.getYear());
+        volga.makeBeBe();
 
-            // диапазон годов рождения
-            int minBirthYear = (int) (Math.random() * 15) + 1930;
-            int maxBirthYear = (int) (Math.random() * 15) + 1975;
+        Car renault = new Car("Рено", 2020);
+        System.out.println(renault.getModel() + " " + renault.getYear());
+        renault.makeBeBe();
 
-            Fizik fizik = new Fizik(minBirthYear, maxBirthYear);
+        Car mercedes = new Car("Мерседес");
+        System.out.println(mercedes.getModel() + " " + mercedes.getYear());
+        mercedes.setYear(2019);
+        mercedes.makeBeBe();
 
-            String fio = Fizik.Fio.chooseFio();
-            int birthYear = fizik.setBirthYear();
-
-            System.out.println("ID: " + Fizik.changeId());
-            System.out.println("ФИО: " + fio);
-            System.out.println("Год рождения: " + birthYear + "\n");
-        }
     }
 
 }
